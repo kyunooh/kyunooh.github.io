@@ -17,7 +17,7 @@ title: 젤리의 망상
 email: chm073@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   젤리의 망상 이사중
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jellyms.kr" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  kyunooh
 
