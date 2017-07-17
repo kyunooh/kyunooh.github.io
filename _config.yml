@@ -25,7 +25,10 @@ github_username:  kyunooh
 markdown: kramdown
 theme: minima
 gems:
+  - jekyll-mentions
+  - jemoji
   - jekyll-feed
+  - jekyll-sitemap
 
 
 # Exclude from processing.
