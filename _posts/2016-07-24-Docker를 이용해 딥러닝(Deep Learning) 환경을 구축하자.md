@@ -6,11 +6,13 @@ categories: Core
 ---
 
 
-## [](#가이드-전-주의사항)가이드 전 주의사항
+<div style="font-family: 'Lucida Grande', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif; font-size: 0.9em; overflow-x: hidden; overflow-y: auto; margin: 0px !important; padding: 5px 20px 26px !important; background-color: rgb(255, 255, 255);font-family: 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, SimSun, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Segoe UI', AppleSDGothicNeo-Medium, 'Malgun Gothic', Verdana, Tahoma, sans-serif; padding: 20px;padding: 20px; color: rgb(34, 34, 34); font-size: 15px; font-family: 'Roboto Condensed', Tauri, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, SimSun, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Segoe UI', AppleSDGothicNeo-Medium, 'Malgun Gothic', Verdana, Tahoma, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; background: rgb(255, 255, 255);">
+
+## 가이드 전 주의사항
 
 필자는 딥러닝 개발자 또는 전문가가 아닙니다. 공부하는 중도 아니고 공부를 시작하는 중입니다. 그러니 내용중 틀린 부분이 발견된다면, 정정 부탁드립니다. 최근에 딥러닝 환경 구축으로 인해 극심한 스트레스를 받았지만, dl-docker를 통해 쉽게 해결한 기억이 있어 공유합니다. 딥러닝을 배우기 위한 개발 환경설정은 본 글로 충분하다고 느낍니다.
 
-## [](#docker-for-mac-설치하자)Docker for mac 설치하자
+## Docker for mac 설치하자
 
 [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/) 에 접속하여 Docker for mac을 다운로드하여 설치해준다. 일반 어플리케이션을 설치하듯 쉽게 설치가 가능하다. 설치가 완료되면 실행을 시킨 뒤 터미널을 열어
 
@@ -18,13 +20,13 @@ categories: Core
 
 명령어를 이용하여 정상적으로 설치되었는지 확인한다.
 
-## [](#all-in-one-docker를-사용해보자)All in one docker를 사용해보자
+## All in one docker를 사용해보자
 
-### [](#all-in-one-docker란?)All in one docker란?
+### All in one docker란?
 
 All in one docker(이하 dl-docker)는 딥러닝을 위한 docker image이다. 딥러닝을 위한 프레임워크들을 아주 잘 정리되있어서, dl-docker만으로 딥러닝 프레임워크를 테스트 해보는 데 충분했다. 아쉬운 단점은 **GPU Version 은 리눅스에서만 지원 하며 맥에서는 CPU 버전밖에 사용할 수 없다.**
 
-### [](#dl-docker를-받고-jupyter-접속하기)dl-docker를 받고 jupyter 접속하기
+### dl-docker를 받고 jupyter 접속하기
 
 Docker가 설치되어 있다면, 아래의 명령어를 통해 간단하게 dl-docker를 받으실 수 있습니다.
 
@@ -46,6 +48,8 @@ Docker가 설치되어 있다면, 아래의 명령어를 통해 간단하게 dl-
 
 브라우저를 열어 localhost:8888에 접속하여 정상적으로 주피터가 실행되는 지 확인합니다. 실행이 정상적으로 된다면 신나게 코딩을 합시다.
 
-#### [](#마치며)마치며
+#### 마치며
 
 dl-docker에는 여러가지 딥러닝 프레임워크가 많으므로 잘 활용하시길 바랍니다. 다음에는 파이참과 docker를 활용한 리모트 개발을 포스팅할 예정입니다.
+
+</div>
