@@ -6,8 +6,6 @@ categories: Core
 ---
 
 
-<div style="font-family: 'Lucida Grande', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif; font-size: 0.9em; overflow-x: hidden; overflow-y: auto; margin: 0px !important; padding: 5px 20px 26px !important; background-color: rgb(255, 255, 255);font-family: 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, SimSun, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Segoe UI', AppleSDGothicNeo-Medium, 'Malgun Gothic', Verdana, Tahoma, sans-serif; padding: 20px;padding: 20px; color: rgb(34, 34, 34); font-size: 15px; font-family: 'Roboto Condensed', Tauri, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, SimSun, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Segoe UI', AppleSDGothicNeo-Medium, 'Malgun Gothic', Verdana, Tahoma, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; background: rgb(255, 255, 255);">
-
 ## [](#가이드-전-주의사항)가이드 전 주의사항
 
 필자는 딥러닝 개발자 또는 전문가가 아닙니다. 공부하는 중도 아니고 공부를 시작하는 중입니다. 그러니 내용중 틀린 부분이 발견된다면, 정정 부탁드립니다. 최근에 딥러닝 환경 구축으로 인해 극심한 스트레스를 받았지만, dl-docker를 통해 쉽게 해결한 기억이 있어 공유합니다. 딥러닝을 배우기 위한 개발 환경설정은 본 글로 충분하다고 느낍니다.
@@ -51,5 +49,3 @@ Docker가 설치되어 있다면, 아래의 명령어를 통해 간단하게 dl-
 #### [](#마치며)마치며
 
 dl-docker에는 여러가지 딥러닝 프레임워크가 많으므로 잘 활용하시길 바랍니다. 다음에는 파이참과 docker를 활용한 리모트 개발을 포스팅할 예정입니다.
-
-</div>
