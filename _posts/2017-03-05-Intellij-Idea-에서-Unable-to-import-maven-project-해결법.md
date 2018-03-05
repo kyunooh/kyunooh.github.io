@@ -1,5 +1,6 @@
 ## 문제 상황
 ![Unable to import maven porject](https://i.imgur.com/5Hn516K.png)
+
 계속 위와 같은 메시지가 발생하여, maven의 오류라고 생각하고 있었다. 위에서 말하는 logs도 처음에 maven의 로그를 보라는 건 줄 알았다.하지만 커맨드로 하면 잘 된다. 즉 위의 로그는 IntelliJ의 로그를 의미하는 것이다.
 
 상단 메뉴의 `Help >> Show Log in Finder(Explorer)`을 통해 log를 보면 다음과 같은 에러를 볼 수 있다.
@@ -23,5 +24,7 @@ Caused by: java.io.IOException: error=2, No such file or directory
 
 ## 어디까지나 임시적인 해결방법
 로컬에 설치된 JDK를 해당 경로에 복사해주는 것으로 문제를 해결할 수 있다.
+
 ![Imgur](https://i.imgur.com/91qDNcA.png)
+
 혹시나 해서 겹치는 폴더의 경우는, 폴더 하나 씩 선택해서 따로 옮겨줌. 현재 일주일 정도는 아무 문제 없이 잘 사용중이다.
