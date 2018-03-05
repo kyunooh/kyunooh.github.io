@@ -1,4 +1,3 @@
-# Intellij Idea 에서 Unable to import maven project 해결법
 ## 문제 상황
 ![Unable to import maven porject](https://i.imgur.com/5Hn516K.png)
 계속 위와 같은 메시지가 발생하여, maven의 오류라고 생각하고 있었다. 위에서 말하는 logs도 처음에 maven의 로그를 보라는 건 줄 알았다.하지만 커맨드로 하면 잘 된다. 즉 위의 로그는 IntelliJ의 로그를 의미하는 것이다.
