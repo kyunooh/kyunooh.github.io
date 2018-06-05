@@ -11,8 +11,8 @@
     <meta property="fb:app_id" content="1966209490079135">
     <style>
         @font-face {
-            font-family: "alarm-clock";
-            src: url("alarm_clock.ttf");
+            font-family: "to-the-king";
+            src: url("to-the-king.ttf");
         }
         
         body {
@@ -21,11 +21,13 @@
             text-align: center;
             vertical-align: middle;
             height: 100vh;
+
         }
+
         #to-the-king-clock {
-            font-family: "alarm-clock";
+            font-family: "to-the-king";
             color: green;
-            font-size: 20.5vw;
+            font-size: 27.5vw;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
@@ -37,19 +39,23 @@
     <script>
         var startTime = new Date();
         var clock = document.getElementById("to-the-king-clock");
+
         var formTime = function(time) {
             if (time < 10) {
                 return "0" + time;
             }
             return time;
         };
+
         var setTime = function () {
             var time = Math.floor((new Date() - startTime)/1000)
             var sec = time % 60;
             var minute =  Math.floor(time / 60 % (60));
             var hour = Math.floor(time / (60 * 60));
+
             clock.innerText = formTime(hour) + ":" + formTime(minute) + ":" + formTime(sec);
         };
+
         setTime();
         setInterval(function () {
             setTime();
