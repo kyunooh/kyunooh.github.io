@@ -6,7 +6,7 @@ categories: React Redux
 
 ---
 
-역자글: 본 글은 Tilergaw님의 https://tylergaw.com/articles/dynamic-redux-reducers/ 글을 허락을 받아 번역 진행하였습니다. 아래 부터는 번역된 본문입니다.
+역자글: 본 글은 Tylergaw님의 https://tylergaw.com/articles/dynamic-redux-reducers/ 글을 허락을 받아 번역 진행하였습니다. 아래 부터는 번역된 본문입니다.
 
 
 
