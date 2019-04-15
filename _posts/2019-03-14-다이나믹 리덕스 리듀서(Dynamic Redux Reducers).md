@@ -6,11 +6,10 @@ categories: React Redux
 
 ---
 
-역자글: 본 글은 Tylergaw님의 https://tylergaw.com/articles/dynamic-redux-reducers/ 글을 허락을 받아 번역 진행하였습니다. 아래 부터는 번역된 본문입니다.
+역자글: 본 글은 Tylergaw님의 [Dynamic Redux Reducers](https://tylergaw.com/articles/dynamic-redux-reducers) 글을 허락을 받아 번역 진행하였습니다. 아래 부터는 번역된 본문입니다.
 
 
-
-이 글은 제가 React/Redux 프로젝트를 진행하며 필요했던 것들에 대하여 적었습니다. 전에도 겪었던 문제이지만, 제가 직접 이런 걸 해결해야하는 건 처음이었어요. 저한테는 어려운 문제였고, 이 복잡한 문제를 해결하기 위해 천천히 많은 시간을 사용하여 익혔습니다. 나와 같은 문제를 겪는 누군가에게 도움이 되었으면 해요.
+이 글은 제가 React/Redux 프로젝트를 진행하며 필요했던 걸 적었습니다. 전에도 겪었던 문제이지만, 제가 직접 이런 문제를 해결하는 건 처음이었어요. 저한테는 어려운 문제였고, 이 복잡한 문제를 해결하기 위해 천천히 많은 시간을 사용하여 익혔습니다. 나와 같은 문제를 겪는 누군가에게 도움이 되었으면 해요.
 이제 진행했던 것에 대해서 자세히 설명해볼게요. 이건 [라이브 데모](https://qk3n9xmm3w.codesandbox.io)이고요.  이건 [수정가능한 sandbox](https://codesandbox.io/s/qk3n9xmm3w)입니다. 변화를 확인하기 위한 가장 좋은 방법은 [Redux 개발자 도구 확장 플러그인을 사용하는 것입니다.](https://github.com/zalmoxisus/redux-devtools-extension)
 
 글을 진행하기에 앞서 전 여러분이 Redux에 대한 이해가 있고, `react-redux`를 사용하여 진행한다는 걸 가정하겠습니다. 또한 비슷한 문제를 겪고 있고, 해당 문제에 대한 해결책을 찾고 있다고 가정합니다.
@@ -26,8 +25,8 @@ categories: React Redux
 ## 이미 존재하는 해결책
 
 구글링을 통해 [이런 해결책](https://stackoverflow.com/a/33044701)을 찾았는데요. Dan Abramov의 답변이 좋은 방법이라고 생각했고 제 코드에서도 대부분 그의 코드를 사용했습니다.
-Dan의 답변에서 리듀서를 주입하는 예시들은 모두 설득력이 있었습니다. 전 React Router를 사용하는 중이지만, 그가 적어둔 방식대로 사용하진 않았어요. 하지만 또 이 방식대로 제 라우트를 바꾸고 싶진 않았죠. 또한 공식 문서에서 그가 예시로 든 방법을 찾을 수도 없었어요. 그래서 그냥 복붙하는 건 피하려고 했죠. 그리고 완벽하게 코드를 이해한 뒤 제 프로젝트에 추가 하고 싶었습니다. 
-일단 제가 찾은 두가지를 알려드리자면, [redux-dynamic-reducer](https://github.com/ioof-holdings/redux-dynamic-reducer)와 [paradux](https://github.com/asteridux/paradux)인데요. 전 의존성을 추가로 집어넣고 싶진 않아서 사용하진 않았습니다만, 여러분들한테 도움이 될 수도 있을 것 같아요.
+Dan의 답변에서 리듀서를 주입하는 예시들은 모두 설득력이 있었습니다. 전 React Router를 사용하는 중이었지만, 그가 적어둔 방식대로 사용하진 않았어요. 하지만 또 이 방식대로 제 라우트를 바꾸고 싶진 않았죠. 또한 공식 문서에서 그가 예시로 든 방법을 찾을 수도 없었어요. 그래서 그냥 복붙하는 건 피하려고 했죠. 그리고 완벽하게 코드를 이해한 뒤 제 프로젝트에 추가 하고 싶었습니다. 
+일단 제가 찾은 두가지를 알려드리자면, [redux-dynamic-reducer](https://github.com/ioof-holdings/redux-dynamic-reducer)와 [paradux](https://github.com/asteridux/paradux)인데요. 전 의존성을 추가로 집어넣고 싶진 않아서 사용하진 않았습니다만, 여러분들한테는 도움이 될 수도 있어 보여요.
 
 ## 데모에서는...
 
@@ -74,7 +73,7 @@ const initializeStore = () => {
 export default initializeStore;
 ```
 
-`initializeStore`의 첫줄은 `createReducer`에서 Redux 스토어를 초기화 하는 부분입니다. 보통 Redux를 사용할 때 여러분들이 해야하는 거죠. 이 스토어는 `home`, `layout`과 함께 준비되면서 설정됩니다. 
+`initializeStore`의 첫줄은 `createReducer`로 Redux 스토어를 초기화 하는 부분입니다. 보통 Redux를 사용할 때 여러분들이 해야하는 거죠. 이 스토어는 `home`, `layout`과 함께 준비되면서 설정됩니다. 
 `createStore`는 순수한 객체를 반환하고, 이를 통해 아이템들을 추적할 수 있는 장점을 얻을 수 있습니다. `store.asyncReducers`를 이용하여 다이나믹 리듀서를 제공하도록 할 것입니다. `store.injectReducer` 는 Dan의 예제와는 다릅니다. `injectAsyncRebucer`와 같은 동작을 하지만 편리하게 사용하기 위해 `store` 객체에 붙혔어요. 나중에 다시 보여드리겠습니다.
 `injectReducer` 는 두가지 역할[^responsibilities]을 갖습니다. 모든 다이나믹 리듀서는 `asyncReducers`에 저장합니다. 이렇게 하면 `injectReducer`를 호출 할때 다른 다이나믹 리듀서를 잃지 않게됩니다. `replaceReducer`는 Redux의 부분이기 때문에 건드리지 않습니다.  `replaceReducer`를 호출하면 넘겨준 리듀서로 대체됩니다. 
 
@@ -98,7 +97,7 @@ render(
 );
 ```
 
-`store`를 `Provider`에 넘겨주면, 모든 자식 컴포넌트들은 connect 함수를 통해 사용할 수 있게 됩니다. `store`에 대해 많이 읽고 배우다 보니 각 컴포넌트의  `context` 에서도 가능하다는 것도 알았어요. React `context`에 대해서 알아보셨다면, 이렇게 사용하면 안된다는 걸 아실거에요. 하지만 제 목적을 위해서라면 괜찮겠다 싶을 정도까지는 격리되어 보였어요. 이게 맞는지 틀린지는 시간이 흐른 뒤에 알 수 있을거에요. 제 `context` 사용법에 대한 자세한 내용은 다시 말씀드릴게요.
+`store`를 `Provider`에 넘겨주면, 모든 자식 컴포넌트들은 `store`를 connect 함수를 통해 사용할 수 있게 됩니다. `store`에 대해 많이 읽고 배우다 보니 각 컴포넌트의  `context` 에서도 가능하다는 것도 알았어요. React `context`에 대해서 알아보셨다면, 이렇게 사용하면 안된다는 걸 아실거에요. 하지만 제 목적을 위해서라면 괜찮겠다 싶을 정도까지는 격리되어 보였어요. 이게 맞는지 틀린지는 시간이 흐른 뒤에 알 수 있을거에요. 제 `context` 사용법에 대한 자세한 내용은 다시 말씀드릴게요.
 
 ## 조각들을 함께 두기
 
@@ -133,7 +132,7 @@ export default withReducer("records", reducer)(Records);
 
 중요한 부분은 마지막 줄이에요. `withReducer`를 호출하고 'records'라는 키와 record reducer를 제공합니다. 그러면 반환된 함수를 호출하고, `Records` 컴포넌트를 제공하게 되는 거죠.
 
-`Records`는 React 컴포넌트에요. React Router`<Route />`의 `component ` 값을 삽입합니다. 
+`Records`는 React 컴포넌트에요. React Router에서는 `<Route />`의 속성으로 `component`를 이용합니다. 
 
 ### withReducer 컴포넌트
 
@@ -149,9 +148,9 @@ Extended.contextTypes = {
 ...
 ```
 
-`Extended`는 상태가 없는[^stateless] 컴포넌트 입니다. 그러므로 꼭 contextTypes 프로퍼티가 `context`로 부터 정의해야합니다. React 문서를 읽어보면,
+`Extended`는 상태가 없는[^stateless] 컴포넌트 입니다. 그러므로 꼭 contextTypes 프로퍼티는 `context`로 부터 정의되어야 합니다. React 문서를 읽어보면,
 
-> 만약 contextTypes이 정의되어 있으면 함수의 속성으로 정의되어 있으면, 상태가 없는 함수 컴포넌트들 또한 context에 의해 참조될 수 있습니다.
+> 만약 contextTypes이 함수의 속성으로 정의되어 있으면, 상태가 없는 함수 컴포넌트들 또한 context에 의해 참조될 수 있습니다.
 >
 > <cite>[reactjs.org/docs/context.html#referencing-context-in-stateless-functional-components](https://reactjs.org/docs/context.html#referencing-context-in-stateless-functional-components)</cite>
 >
@@ -190,7 +189,7 @@ const Extended = (props, context) => {
 
 ![Animated gif showing a new reducer added in Redux devtools Chrome extension.](https://d3vv6lp55qjaqc.cloudfront.net/items/1n0J3V3G0j1X2a1M1C00/Screen%20Recording%202018-01-07%20at%2009.52%20PM.gif)
 
-데모에서 결과를 더 보여주기위해, store의 데이터를 보여주기 위해 `connect`를 이용하여 record 라우트와 연결하였습니다. 
+데모에서 store의 데이터를 보여주기 위해 `connect`를 이용하여 record 라우트와 연결하였습니다. 
 
 ```
 ...
@@ -209,12 +208,12 @@ export default connect(mapStateToProps)(Record);
 
 ## 해결 방법
 
-제가 위에서 이건 React/Redux 프로젝트 할때 보통 여러가지 이유로 필요한 것이라고 언급했었죠? 전 전에도 비슷하지만 다른 메소드들로 다이나믹 라우트를 사용했습니다. 다른 사람들은 다른 방법들을 가지고 있었고, 이것 또한 방법 중 하나일 뿐 정답은 아닐 수 있습니다.
+제가 위에서 이건 React/Redux 프로젝트 할때 보통 여러가지 이유로 필요한 것이라고 언급했었죠? 전에도 비슷하지만 다른 메소드들로 다이나믹 라우트를 사용했습니다. 다른 사람들은 다른 방법들을 가지고 있었고, 이것 또한 방법 중 하나일 뿐 꼭 정답은 아닐 수 있습니다.
 
 만약 여러분들한테 이 글이 도움이 되었거나 더 나은 방법이 있으면 알려주세요. 항상 더 좋은 방법은 있다고 생각합니다.
 
 [^responsibilities]: 역자주) 원문에서는 responsibilities(책임)로 표현되었지만 역할로 번역하였습니다.
-[^higher-order-component]: HOC, https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html
+[^higher-order-component]: HOC, [HOC에 대한 리액트 공식 문서](https://reactjs.org/docs/higher-order-components.html)
 [^deprecated]: 역자주) 현재 getChildContex와 childContextTypes의 경우 deprecated 되어 다른 방식으로 구동 됩니다. 자세한 내용은 <https://reactjs.org/docs/legacy-context.html> 를 참고하세요.
 [^code-splitting]: 역자주) 코드 스플리팅에 관한 한국어 글은 velopert님의 다음 글을 참조해주세요.  https://velog.io/@velopert/react-code-splitting 
 [^stateless]: 마땅한 대체어가 생각나지 않아, 상태가 없는으로 해석 했습니다.
