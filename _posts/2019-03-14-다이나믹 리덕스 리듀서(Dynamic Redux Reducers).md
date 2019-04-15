@@ -3,8 +3,8 @@ layout: post
 title: "다이나믹 리덕스 리듀서(Dynamic Redux Reducers)"
 date: 2019-03-14 15:20:00 +0900
 categories: React Redux
----
 
+---
 
 역자글: 본 글은 Tilergaw님의 https://tylergaw.com/articles/dynamic-redux-reducers/ 글을 허락을 받아 번역 진행하였습니다. 아래 부터는 번역된 본문입니다.
 
@@ -188,10 +188,7 @@ const Extended = (props, context) => {
 
 자 일단 코드는 동작하는 것처럼 보입니다만, 이런 류는 타입의 변화를 시각화하긴 어렵습니다. 제가 위에서 이미 [Redux 개발자 도구 확장 플러그인](https://github.com/zalmoxisus/redux-devtools-extension)을 언급했었죠? 전 개인적으로 이게 제일 좋았어요.  [데모](https://qk3n9xmm3w.codesandbox.io)에서 스토어를 만들 때 개발도구 스니펫을 추가해두었습니다. 만약 여러분들이 확장 플러그인을 설치 한 뒤 Redux panel을 본다면, 새로운 리듀서가 state 트리에서 변경되는 걸 보실 수 있을겁니다.
 
-<figure>![Animated gif showing a new reducer added in Redux devtools Chrome extension.](https://d3vv6lp55qjaqc.cloudfront.net/items/1n0J3V3G0j1X2a1M1C00/Screen%20Recording%202018-01-07%20at%2009.52%20PM.gif)
-<figcaption>
-  /records 로 라우트 될때 reducer가 추가되어지는 걸 확인할 수 있는 데모</figcaption>
-</figure>
+![Animated gif showing a new reducer added in Redux devtools Chrome extension.](https://d3vv6lp55qjaqc.cloudfront.net/items/1n0J3V3G0j1X2a1M1C00/Screen%20Recording%202018-01-07%20at%2009.52%20PM.gif)
 
 데모에서 결과를 더 보여주기위해, store의 데이터를 보여주기 위해 `connect`를 이용하여 record 라우트와 연결하였습니다. 
 
@@ -217,6 +214,7 @@ export default connect(mapStateToProps)(Record);
 만약 여러분들한테 이 글이 도움이 되었거나 더 나은 방법이 있으면 알려주세요. 항상 더 좋은 방법은 있다고 생각합니다.
 
 [^responsibilities]: 역자주) 원문에서는 responsibilities(책임)로 표현되었지만 역할로 번역하였습니다.
-[^higher-order component]: https://reactjs.org/docs/higher-order-components.html
+[^higher-order component]: HOC, https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html
 [^deprecated]: 역자주) 현재 getChildContex와 childContextTypes의 경우 deprecated 되어 다른 방식으로 구동 됩니다. 자세한 내용은 <https://reactjs.org/docs/legacy-context.html> 를 참고하세요.
 [^code-splitting]: 역자주) 코드 스플리팅에 관한 한국어 글은 velopert님의 다음 글을 참조해주세요.  https://velog.io/@velopert/react-code-splitting 
+[^stateless]: 마땅한 대체어가 생각나지 않아, 상태가 없는으로 해석 했습니다.
