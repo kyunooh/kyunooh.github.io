@@ -102,7 +102,7 @@ render(
 
 ## 조각들을 함께 두기
 
-전 약간의 코드로 리듀서를 추가하고 싶습니다. `/withReducer.js`에서 고차 컴포넌트[^higher-order component] 를 사용합니다.
+전 약간의 코드로 리듀서를 추가하고 싶습니다. `/withReducer.js`에서 고차 컴포넌트[^higher-order-component] 를 사용합니다.
 
 ```jsx
 import React from "react";
@@ -214,7 +214,7 @@ export default connect(mapStateToProps)(Record);
 만약 여러분들한테 이 글이 도움이 되었거나 더 나은 방법이 있으면 알려주세요. 항상 더 좋은 방법은 있다고 생각합니다.
 
 [^responsibilities]: 역자주) 원문에서는 responsibilities(책임)로 표현되었지만 역할로 번역하였습니다.
-[^higher-order component]: HOC, https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html
+[^higher-order-component]: HOC, https://reactjs-kr.firebaseapp.com/docs/higher-order-components.html
 [^deprecated]: 역자주) 현재 getChildContex와 childContextTypes의 경우 deprecated 되어 다른 방식으로 구동 됩니다. 자세한 내용은 <https://reactjs.org/docs/legacy-context.html> 를 참고하세요.
 [^code-splitting]: 역자주) 코드 스플리팅에 관한 한국어 글은 velopert님의 다음 글을 참조해주세요.  https://velog.io/@velopert/react-code-splitting 
 [^stateless]: 마땅한 대체어가 생각나지 않아, 상태가 없는으로 해석 했습니다.
