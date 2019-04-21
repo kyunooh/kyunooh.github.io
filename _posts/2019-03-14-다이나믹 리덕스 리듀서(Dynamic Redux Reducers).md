@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "다이나믹 리덕스 리듀서(Dynamic Redux Reducers)"
-date: 2019-03-14 15:20:00 +0900
+date: 2019-04-14 15:20:00 +0900
 categories: React Redux
 
 ---
